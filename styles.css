@@ -883,15 +883,41 @@ a {
 
 .overall-scale {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: minmax(0, 720px);
+  justify-content: center;
+  gap: 10px;
+}
+
+.overall-endpoints {
+  display: flex;
+  justify-content: space-between;
   gap: 12px;
-  align-items: center;
+  min-width: 0;
 }
 
 .overall-endpoint {
   color: var(--muted);
   font-weight: 800;
-  text-align: center;
+  line-height: 1.35;
+}
+
+.overall-endpoint:last-child {
+  text-align: right;
+}
+
+.overall-score-options {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 6px;
+  width: 100%;
+  margin-top: 0;
+}
+
+.overall-score-options .score-label {
+  min-width: 0;
+  min-height: 48px;
+  border-radius: 8px;
+  font-size: clamp(0.95rem, 1.4vw, 1.08rem);
+  padding: 0;
 }
 
 .notes-area {
@@ -1239,8 +1265,28 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .overall-endpoints {
+    gap: 8px;
+    font-size: 0.94rem;
+  }
+
   .overall-endpoint {
     text-align: left;
+  }
+
+  .overall-endpoint:last-child {
+    text-align: right;
+  }
+
+  .overall-score-options {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .overall-score-options .score-label {
+    min-height: 42px;
+    border-radius: 7px;
+    font-size: clamp(0.82rem, 3.6vw, 1rem);
   }
 }
 

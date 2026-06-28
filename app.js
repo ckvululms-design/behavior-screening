@@ -1296,8 +1296,11 @@ function renderOverallBlock(assessment) {
       <h3 class="section-heading" id="overall-heading">${escapeHtml(overall.title)}</h3>
       <p class="section-copy">${escapeHtml(overall.prompt)}</p>
       <div class="overall-scale">
-        <span class="overall-endpoint">${escapeHtml(overall.low)}</span>
-        <fieldset class="score-options">
+        <div class="overall-endpoints" aria-hidden="true">
+          <span class="overall-endpoint">${escapeHtml(overall.low)}</span>
+          <span class="overall-endpoint">${escapeHtml(overall.high)}</span>
+        </div>
+        <fieldset class="score-options overall-score-options">
           <legend class="sr-only">${escapeHtml(overall.title)}</legend>
           ${range(overall.min, overall.max)
             .map((score) =>
@@ -1314,7 +1317,6 @@ function renderOverallBlock(assessment) {
             )
             .join("")}
         </fieldset>
-        <span class="overall-endpoint">${escapeHtml(overall.high)}</span>
       </div>
     </section>
   `;
