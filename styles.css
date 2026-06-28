@@ -800,6 +800,17 @@ a {
   font-weight: 700;
 }
 
+.question-scale-hint {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
 .reverse-note {
   margin: 6px 0 0;
   color: var(--rose);

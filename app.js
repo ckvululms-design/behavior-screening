@@ -1242,6 +1242,7 @@ function renderQuestionCard(assessment, category, item, number, itemId) {
         <span class="question-number">${number}.</span>
         <div>
           <p class="question-text">${escapeHtml(item.text)}</p>
+          ${renderQuestionScaleHint(scale, item)}
           ${
             item.reverse
               ? `<p class="reverse-note">負向題：${scale.min} 代表負面狀態明顯，${scale.max} 代表負面狀態不明顯。</p>`
@@ -1273,6 +1274,17 @@ function renderQuestionCard(assessment, category, item, number, itemId) {
           .join("")}
       </fieldset>
     </article>
+  `;
+}
+
+function renderQuestionScaleHint(scale, item) {
+  const min = getScaleMin(scale);
+  const max = getScaleMax(scale);
+  return `
+    <p class="question-scale-hint">
+      <span>${min} 分：${escapeHtml(scoreLabelFor(scale, item, min))}</span>
+      <span>${max} 分：${escapeHtml(scoreLabelFor(scale, item, max))}</span>
+    </p>
   `;
 }
 
