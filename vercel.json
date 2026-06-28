@@ -1,0 +1,17 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/c-barq",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/short-cbarq",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/fe-barq",
+      "destination": "/index.html"
+    }
+  ]
+}
